@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="HorizontalSliderTestSuite" verbose="1">
+
+    <test name="JSErrorTests">
+        <classes>
+            <class name="jserrortests.JSErrorTests" />
+        </classes>
+    </test>
+
+</suite>
