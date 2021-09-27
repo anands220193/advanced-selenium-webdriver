@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import java.util.Locale;
 
@@ -53,6 +55,15 @@ public class BrowserDriverFactory {
                 FirefoxOptions firefoxOptions=new FirefoxOptions();
                 firefoxOptions.setBinary(firefoxBinary);
                 driver.set(new FirefoxDriver(firefoxOptions));
+                break;
+
+            case "phantomjs":
+                System.setProperty("phantomjs.binary.path", "src/main/resources/phantomjs.exe");
+                driver.set(new PhantomJSDriver());
+                break;
+
+            case "htmlunit":
+                driver.set(new HtmlUnitDriver());
                 break;
 
             default:
